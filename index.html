@@ -8,21 +8,82 @@
   
   <title>Frontend Mentor | GitHub user search app</title>
 </head>
+
 <body>
 
-  devfinder
+  <header class="header">
+    <div class="header__logo">
+      <p class="header__name">devfinder</p>
+    </div>
+    <div class="header__toggle">
+      <div class="toggle_light">
+        <p class="toggle__desc">Light</p>
+        <img src="/assets/icon-sun.svg" alt="sun-icon" class="toggle__thumb">
+      </div>
+      <div class="toggle_dark">
+        <p class="toggle__desc">Dark</p>
+        <img src="/assets/icon-moon.svg" alt="moon-icon" class="toggle__thumb">
+      </div>
+    </div>
+  </header>
 
-  Light
-  Dark
+  <form action="post" class="search-form">
+    <div class="search-form__content">
+      <img src="/assets/icon-search.svg" alt="search-icon" class="search-form__thumb">
+      <input type="text" class="search-form__input" placeholder="Search GitHub username...">
+      <button class="search-form__button">Search</button>
+    </div>
+  </form>
 
-  Search GitHub username...
-  Search
+  <main class="user-card">
+    <div class="user-card__icon"></div>
+    <div class="user-card__info">
 
-  Joined
+      <div class="user__desc">
+        <h1 class="user__name"></h1>
+        <h2 class="user__nick"></h2>
+        <p class="user__join">Joined</p>
+      </div>
+      <div class="user__bio">
+        <p></p>
+      </div>
 
-  Repos
-  Followers
-  Following
+      <div class="user__activities">
+        <div class="user__repos">
+          <p class="activities__name">Repos</p>
+          <p class="activities__amount"></p>
+        </div>
+        <div class="user__followers">
+          <p class="activities__name">Followers</p>
+          <p class="activities__amount"></p>
+        </div>
+        <div class="user__following">
+          <p class="activities__name">Following</p>
+          <p class="activities__amount"></p>
+        </div>
+      </div>
+
+      <div class="user__links">
+        <div class="user__location">
+          <img src="/assets/icon-location.svg" alt="icon-location" class="link__thumb">
+          <p class="link__desc"></p>
+        </div>
+        <div class="user__twitter">
+          <img src="/assets/icon-twitter.svg" alt="icon-twitter" class="link__thumb">
+          <p class="link__desc"></p>
+        </div>
+        <div class="user__website">
+          <img src="/assets/icon-website.svg" alt="icon-website" class="link__thumb">
+          <p class="link__desc"></p>
+        </div>
+        <div class="user__company">
+          <img src="/assets/icon-company.svg" alt="icon-company" class="link__thumb">
+          <p class="link__desc"></p>
+        </div>
+      </div>
+
+    </div>
+  </main>
 
 </body>
 </html>

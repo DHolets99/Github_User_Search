@@ -2,3 +2,20 @@
 /*DARK MODE COLORS*/
 /*Typography*/
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+/*Automatically change theme*/
+:root {
+  --var-bgcolor: #F6F8FF;
+  --var-fontcolor: #4B6A9B;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --var-bgcolor: #141D2F;
+    --var-fontcolor: #FFFFFF;
+  }
+}
+body {
+  font-family: "Space Mono", monospace;
+  background-color: var(--var-bgcolor);
+  color: var(--var-fontcolor);
+}

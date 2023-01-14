@@ -1,0 +1,61 @@
+/*LIGHT MODE COLORS*/
+
+$blue: #0079FF;
+$gray: #697C9A;
+$darkBlue_light: #4B6A9B;
+$darkGray_light: #2B3442;
+$lightGray: #F6F8FF;
+$white_light: #FEFEFE;
+
+
+/*DARK MODE COLORS*/
+
+$blue: #0079FF;
+$white_dark: #FFFFFF;
+$darkGray_dark: #141D2F;
+$darkBlue_dark: #1E2A47;
+
+
+/*Typography*/
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+@mixin h1 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 39px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+@mixin h2 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 33px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+@mixin h3 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+@mixin h4 {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;    
+}
+
+@mixin body {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0px;
+    text-align: left;
+}

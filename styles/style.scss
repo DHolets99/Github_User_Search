@@ -60,24 +60,61 @@ $darkBlue_dark: #1E2A47;
     text-align: left;
 }
 
+@mixin flex_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex_column {
+    display: flex;
+    flex-direction: column;
+}
+
 
 /*Automatically change theme*/
 
 :root {
     --var-bgcolor: #F6F8FF;
     --var-fontcolor: #4B6A9B;
+
+    .toggle_light {
+        display: none;
+    }
+
+    .toggle_dark {
+        display: block;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
       --var-bgcolor: #141D2F;
       --var-fontcolor: #FFFFFF;
+
+      .toggle_light {
+        display: block;
+    }
+
+    .toggle_dark {
+        display: none;
+    }
     }
 }
 
+
+/*start*/
 
 body {
     font-family: 'Space Mono', monospace;
     background-color: var(--var-bgcolor);
     color: var(--var-fontcolor);
+    max-width: 730px;
+    margin: 0 auto;
 }
+
+.header {
+    @include flex_row;
+    margin-bottom: 36px;
+}
+

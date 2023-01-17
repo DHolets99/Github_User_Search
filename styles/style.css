@@ -7,15 +7,36 @@
   --var-bgcolor: #F6F8FF;
   --var-fontcolor: #4B6A9B;
 }
+:root .toggle_light {
+  display: none;
+}
+:root .toggle_dark {
+  display: block;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
     --var-bgcolor: #141D2F;
     --var-fontcolor: #FFFFFF;
   }
+  :root .toggle_light {
+    display: block;
+  }
+  :root .toggle_dark {
+    display: none;
+  }
 }
+/*start*/
 body {
   font-family: "Space Mono", monospace;
   background-color: var(--var-bgcolor);
   color: var(--var-fontcolor);
+  max-width: 730px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

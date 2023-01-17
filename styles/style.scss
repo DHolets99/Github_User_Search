@@ -78,13 +78,14 @@ $darkBlue_dark: #1E2A47;
     --var-bgcolor: #F6F8FF;
     --var-fontcolor: #4B6A9B;
 
+    .toggle {
+        @include flex_row;
+    }
+
     .toggle_light {
         display: none;
     }
 
-    .toggle_dark {
-        display: block;
-    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -92,9 +93,13 @@ $darkBlue_dark: #1E2A47;
       --var-bgcolor: #141D2F;
       --var-fontcolor: #FFFFFF;
 
-      .toggle_light {
-        display: block;
+      .toggle {
+        @include flex_row;
     }
+
+      /*.toggle_light {
+        display: block;
+    }*/
 
     .toggle_dark {
         display: none;
@@ -110,11 +115,88 @@ body {
     background-color: var(--var-bgcolor);
     color: var(--var-fontcolor);
     max-width: 730px;
-    margin: 0 auto;
+    margin: 144px auto;
 }
 
 .header {
     @include flex_row;
     margin-bottom: 36px;
+
+    .header__logo {
+        @include h1;
+
+    }
+
+    .toggle__desc {
+        text-transform: uppercase;
+        margin-right: 16px;
+    }
 }
 
+.search-form {
+    margin-bottom: 24px;
+
+    .search-form__content {
+        width: 100%;
+        height: 69px;
+        background: $white_light;
+        border-radius: 15px;
+        box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+        @include flex_row;
+        justify-content: flex-start;
+
+        .search-form__thumb {
+            margin-left: 32px;
+        }
+
+        .search-form__thumb:hover,
+        .search-form__thumb:focus {
+            cursor: pointer;
+        }
+
+        .search-form__input {
+            margin-left: 24px;
+            outline: none;
+            border: none;
+            width: 100%;
+            height: 100%;
+            padding: 0 5px 0 0;
+
+            font-family: Space Mono;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 25px;
+            letter-spacing: 0px;
+            text-align: left;
+            color: #222731;
+            caret-color: $blue;
+        }
+
+        .search-form__input::placeholder {
+            color: $darkBlue_light;
+        }
+
+        .search-form__button {
+            margin: 0 10px 0 auto;
+
+            border: none;
+            outline: none;
+
+            background-color: $blue;
+            border-radius: 10px;
+            padding: 13px 23px;
+            color: $white_light;
+            font-family: Space Mono;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+            letter-spacing: 0px;
+            text-align: left;
+        }
+    }
+}
+
+.search-form:hover,
+.search-form__input:hover {
+    cursor: pointer;
+}

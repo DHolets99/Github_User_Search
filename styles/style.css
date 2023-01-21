@@ -120,3 +120,43 @@ body {
 .search-form__input:hover {
   cursor: pointer;
 }
+
+.user-card {
+  background-color: #FEFEFE;
+  border-radius: 15px;
+  padding: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user-card .user-card__icon {
+  max-width: 117px;
+  max-height: 117px;
+  border-radius: 60px;
+}
+.user-card .user-card__info {
+  max-width: 480px;
+}
+.user-card .user-card__info .user__desc .user__name {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 39px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #2B3442;
+  margin-bottom: 2px;
+}
+.user-card .user-card__info .user__desc .user__nick {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #0079FF;
+}
+.user-card .user-card__info .user__activities {
+  background-color: #F6F8FF;
+  width: 100%;
+  border-radius: 10px;
+  padding: 16px 32px;
+}

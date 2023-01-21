@@ -200,3 +200,41 @@ body {
 .search-form__input:hover {
     cursor: pointer;
 }
+
+.user-card {
+    background-color: $white_light;
+    border-radius: 15px;
+    padding: 48px;
+    @include flex_row;
+
+    .user-card__icon {
+        max-width: 117px;
+        max-height: 117px;
+        border-radius: 60px;
+    }
+
+    .user-card__info {
+        max-width: 480px;
+
+        .user__desc {
+            
+            .user__name {
+                @include h1;
+                color: $darkGray_light;
+                margin-bottom: 2px;
+            }
+
+            .user__nick {
+                @include h3;
+                color: $blue;
+            }
+        }
+
+        .user__activities {
+            background-color: $lightGray;
+            width: 100%;
+            border-radius: 10px;
+            padding: 16px 32px;
+        }
+    }
+}

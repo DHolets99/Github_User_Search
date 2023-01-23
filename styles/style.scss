@@ -206,18 +206,28 @@ body {
     border-radius: 15px;
     padding: 48px;
     @include flex_row;
+    justify-content: flex-start;
+    align-items: flex-start;
 
     .user-card__icon {
         max-width: 117px;
         max-height: 117px;
         border-radius: 60px;
+        margin-right: 37px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+        }
     }
 
     .user-card__info {
         max-width: 480px;
 
         .user__desc {
-            
+            width: 100%;
+
             .user__name {
                 @include h1;
                 color: $darkGray_light;

@@ -128,14 +128,25 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 .user-card .user-card__icon {
   max-width: 117px;
   max-height: 117px;
   border-radius: 60px;
+  margin-right: 37px;
+}
+.user-card .user-card__icon img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
 }
 .user-card .user-card__info {
   max-width: 480px;
+}
+.user-card .user-card__info .user__desc {
+  width: 100%;
 }
 .user-card .user-card__info .user__desc .user__name {
   font-size: 26px;

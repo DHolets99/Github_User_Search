@@ -78,7 +78,7 @@ $darkBlue_dark: #1E2A47;
     --var-bgcolor: #F6F8FF;
     --var-fontcolor: #4B6A9B;
 
-    .toggle {
+    .toggle_dark {
         @include flex_row;
     }
 
@@ -88,20 +88,42 @@ $darkBlue_dark: #1E2A47;
 
 }
 
+[dark] {
+    --var-bgcolor: #141D2F;
+    --var-fontcolor: #FFFFFF;
+
+    .toggle_light {
+        @include flex_row;
+    }
+
+    .toggle_dark {
+        display: none;
+    }
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
       --var-bgcolor: #141D2F;
       --var-fontcolor: #FFFFFF;
 
-      .toggle {
+      .toggle_light {
         @include flex_row;
     }
 
-      /*.toggle_light {
-        display: block;
-    }*/
+    .toggle_dark {
+        display: none;
+    }
+    }
+
+    [light] {
+        --var-bgcolor: #F6F8FF;
+    --var-fontcolor: #4B6A9B;
 
     .toggle_dark {
+        @include flex_row;
+    }
+
+    .toggle_light {
         display: none;
     }
     }
@@ -125,6 +147,10 @@ body {
     .header__logo {
         @include h1;
 
+    }
+
+    .toggle {
+        cursor: pointer;
     }
 
     .toggle__desc {

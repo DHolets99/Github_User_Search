@@ -1,3 +1,7 @@
+const toggle = document.querySelector('.header__toggle');
+const lightTheme = document.querySelector('.toggle_light');
+const darkTheme = document.querySelector('.toggle_dark');
+const root = document.querySelector('html');
 const input = document.querySelector('#form');
 const btn = document.querySelector('.search-form__button');
 const userAvatar = document.querySelector('.user-card__icon > img')
@@ -13,10 +17,24 @@ const userTwitter = document.querySelector('.user__twitter > .link__desc');
 const userWebsite = document.querySelector('.user__website > .link__desc');
 const userCompany = document.querySelector('.user__company > .link__desc');
 
+toggle.addEventListener('click', changeTheme);
+
+function changeTheme() {
+    if (document.body.hasAttribute('light')) {
+        document.body.removeAttribute('light');
+        document.body.setAttribute('dark', '');
+    } else {
+        document.body.removeAttribute('dark');
+        document.body.setAttribute('light', '');
+    }
+}
+
+
 btn.addEventListener('click', () => {
     let nick = input.value;
     getUser(nick);
 });
+
 
 
 async function getUser(nick) {
@@ -45,7 +63,7 @@ function saveUser(json) {
         web: json.html_url,
         twitter: json.twitter_username,
     };
-    
+
     useUserInformation(user);
 }
 
@@ -53,19 +71,21 @@ function useUserInformation(user) {
     userAvatar.src = user.avatar;
     userName.innerHTML = user.nickname;
     userNick.innerHTML = `@${user.login}`;
-
     userJoin.innerHTML = getDate(user.joined);
+
     if (user.bio == null) {
         userBio.innerHTML = 'This profile has no bio'
     } else {
         userBio.innerHTML = user.bio;
     };
+
     userRepos.innerHTML = user.repos;
     userFollowers.innerHTML = user.followers;
-    userLocation.innerHTML = user.location;
-    userTwitter.innerHTML = user.twitter;
-    userWebsite.innerHTML = user.web;
-    userCompany.innerHTML = user.company;
+    userFollowing.innerHTML = user.following;
+    userLocation.innerHTML = getInfo(user.location);
+    userTwitter.innerHTML = getInfo(user.twitter);
+    userWebsite.innerHTML = getInfo(user.web);
+    userCompany.innerHTML = getInfo(user.company);
 }
 
 function getDate(string) {
@@ -74,3 +94,11 @@ function getDate(string) {
     let month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     return `${fullDate.getDate()} ${month[fullDate.getMonth()]} ${fullDate.getFullYear()} `
 };
+
+function getInfo(info) {
+    if (info == null) {
+        return 'Not Available'
+    } else {
+        return info;
+    }
+}

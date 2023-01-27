@@ -7,7 +7,7 @@
   --var-bgcolor: #F6F8FF;
   --var-fontcolor: #4B6A9B;
 }
-:root .toggle {
+:root .toggle_dark {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,20 +16,42 @@
   display: none;
 }
 
+[dark] {
+  --var-bgcolor: #141D2F;
+  --var-fontcolor: #FFFFFF;
+}
+[dark] .toggle_light {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+[dark] .toggle_dark {
+  display: none;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --var-bgcolor: #141D2F;
     --var-fontcolor: #FFFFFF;
-    /*.toggle_light {
-        display: block;
-    }*/
   }
-  :root .toggle {
+  :root .toggle_light {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   :root .toggle_dark {
+    display: none;
+  }
+  [light] {
+    --var-bgcolor: #F6F8FF;
+    --var-fontcolor: #4B6A9B;
+  }
+  [light] .toggle_dark {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  [light] .toggle_light {
     display: none;
   }
 }
@@ -54,6 +76,9 @@ body {
   line-height: 39px;
   letter-spacing: 0px;
   text-align: left;
+}
+.header .toggle {
+  cursor: pointer;
 }
 .header .toggle__desc {
   text-transform: uppercase;

@@ -60,7 +60,7 @@ function saveUser(json) {
         location: json.location,
         company: json.company,
         avatar: json.avatar_url,
-        web: json.html_url,
+        blog: json.blog,
         twitter: json.twitter_username,
     };
 
@@ -84,7 +84,7 @@ function useUserInformation(user) {
     userFollowing.innerHTML = user.following;
     userLocation.innerHTML = getInfo(user.location);
     userTwitter.innerHTML = getInfo(user.twitter);
-    userWebsite.innerHTML = getInfo(user.web);
+    userWebsite.innerHTML = getInfo(user.blog);
     userCompany.innerHTML = getInfo(user.company);
 }
 
@@ -96,7 +96,7 @@ function getDate(string) {
 };
 
 function getInfo(info) {
-    if (info == null) {
+    if (info == null|| info == '') {
         return 'Not Available'
     } else {
         return info;

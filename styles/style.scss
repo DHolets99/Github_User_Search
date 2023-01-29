@@ -6,23 +6,6 @@ input:-webkit-autofill:active  {
     outline: none !important;
 }
 
-/*LIGHT MODE COLORS*/
-
-$blue: #0079FF;
-$gray: #697C9A;
-$darkBlue_light: #4B6A9B;
-$darkGray_light: #2B3442;
-$lightGray: #F6F8FF;
-$white_light: #FEFEFE;
-
-
-/*DARK MODE COLORS*/
-
-$blue: #0079FF;
-$white_dark: #FFFFFF;
-$darkGray_dark: #141D2F;
-$darkBlue_dark: #1E2A47;
-
 
 /*Typography*/
 
@@ -83,9 +66,11 @@ $darkBlue_dark: #1E2A47;
 /*Automatically change theme*/
 
 :root {
-    --var-bgcolor: #F6F8FF;
-    --var-fontcolor: #4B6A9B;
-    --var-cardcolor: #FEFEFE;
+    $blue: #0079FF;
+    $bgColor: #F6F8FF;
+    $fontColor: #4B6A9B;
+    $wideFontColor: #2B3442;
+    $cardColor: #FEFEFE;
 
     .toggle_dark {
         @include flex_row;
@@ -98,10 +83,10 @@ $darkBlue_dark: #1E2A47;
 }
 
 [dark] {
-    --var-bgcolor: #141D2F;
-    --var-fontcolor: #FFFFFF;
-    --var-cardcolor: #1E2A47;
-
+    $blue: #0079FF;
+    $fontColor: #FFFFFF;
+    $bgColor: #141D2F;
+    $cardColor: #1E2A47;
 
     .toggle_light {
         @include flex_row;
@@ -114,9 +99,10 @@ $darkBlue_dark: #1E2A47;
 
 @media (prefers-color-scheme: dark) {
     :root {
-      --var-bgcolor: #141D2F;
-      --var-fontcolor: #FFFFFF;
-      --var-cardcolor: #1E2A47;
+        $blue: #0079FF;
+        $fontColor: #FFFFFF;
+        $bgColor: #141D2F;
+        $cardColor: #1E2A47;
 
       .toggle_light {
         @include flex_row;
@@ -128,9 +114,11 @@ $darkBlue_dark: #1E2A47;
     }
 
     [light] {
-        --var-bgcolor: #F6F8FF;
-        --var-fontcolor: #4B6A9B;
-        --var-cardcolor: #FEFEFE;
+        $blue: #0079FF;
+        $bgColor: #F6F8FF;
+        $fontColor: #4B6A9B;
+        $wideFontColor: #2B3442;
+        $cardColor: #FEFEFE;
 
     .toggle_dark {
         @include flex_row;
@@ -147,8 +135,8 @@ $darkBlue_dark: #1E2A47;
 
 body {
     font-family: 'Space Mono', monospace;
-    background-color: var(--var-bgcolor);
-    color: var(--var-fontcolor);
+    background-color: $bgColor;
+    color: $fontColor;
     max-width: 730px;
     margin: 144px auto;
 }
@@ -178,11 +166,11 @@ body {
     .search-form__content {
         width: 100%;
         height: 69px;
-        background-color: var(--var-cardcolor);
-        border-radius: 15px;
-        box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+        background-color: $cardColor;
         @include flex_row;
         justify-content: flex-start;
+        border-radius: 15px;
+        box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
 
         .search-form__thumb {
             margin-left: 32px;
@@ -217,7 +205,7 @@ body {
         }
 
         .search-form__input::placeholder {
-            color: $darkBlue_light;
+            color: $fontColor;
             background-color: inherit;
         }
 
@@ -230,7 +218,7 @@ body {
             background-color: $blue;
             border-radius: 10px;
             padding: 13px 23px;
-            color: $white_light;
+            color: #FFFFFF;
             font-family: Space Mono;
             font-size: 16px;
             font-weight: 700;
@@ -247,7 +235,7 @@ body {
 }
 
 .user-card {
-    background-color: var(--var-cardcolor);
+    background-color: $cardColor;
     border-radius: 15px;
     padding: 48px;
     display: grid;
@@ -257,6 +245,7 @@ body {
                          "xxx links";
     grid-template-columns: 117px auto;
     column-gap: 37px;
+    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
 
     .user-card__icon {
         max-width: 117px;
@@ -281,7 +270,7 @@ body {
 
         .user__name {
             @include h1;
-            color: var(--var-fontcolor);
+            color: $wideFontColor;
             margin-bottom: 2px;
         }
 
@@ -302,7 +291,7 @@ body {
 
     .user__activities {
         grid-area: active;
-        background-color: $lightGray;
+        background-color: $bgColor;
         border-radius: 10px;
         box-sizing: border-box;
         width: 100%;
@@ -333,10 +322,15 @@ body {
             @include flex_row;
             gap: 16px;
             justify-content: flex-start;
+            cursor: pointer;
 
             img {
                 width: 20px;
             }
+        }
+
+        div:hover {
+            text-decoration: underline;
         }
     }
 }
@@ -421,6 +415,7 @@ body {
                     text-align: center !important;
                     font-size: 11px;
                     line-height: 16px;
+                    color: $fontColor;
                 }
             }
         }

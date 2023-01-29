@@ -5,24 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/style.css">
   
-  <title>Frontend Mentor | GitHub user search app</title>
+  <title>GitHub User Search</title>
 </head>
+
 <body>
 
-  devfinder
+  <header class="header">
+    <div class="header__logo">
+      <p class="header__name">devfinder</p>
+    </div>
+    <div class="header__toggle">
+      <div class="toggle toggle_light">
+        <p class="toggle__desc">Light</p>
+        <img src="/assets/icon-sun.svg" alt="sun-icon" class="toggle__thumb">
+      </div>
+      <div class="toggle toggle_dark">
+        <p class="toggle__desc">Dark</p>
+        <img src="/assets/icon-moon.svg" alt="moon-icon" class="toggle__thumb">
+      </div>
+    </div>
+  </header>
 
-  Light
-  Dark
+  <form action="#" class="search-form">
+    <div class="search-form__content">
+      <label for="form">
+        <img src="/assets/icon-search.svg" alt="search-icon" class="search-form__thumb">
+      </label>
+      <input id="form" type="text" class="search-form__input" placeholder="Search GitHub username...">
+      <button class="search-form__button">Search</button>
+    </div>
+  </form>
 
-  Search GitHub username...
-  Search
+  <main class="user-card">
+    <div class="user-card__icon">
+      <img src="" alt="User-icon">
+    </div>
 
-  Joined
+    <div class="user__desc">
+      <div class="user__namenick">
+        <h1 class="user__name">The Octocat</h1>
+        <h3 class="user__nick">@octocat</h3>
+      </div>
+      <p class="user__join">Joined <span>25 Jan 2011</span></p>
+    </div>
 
-  Repos
-  Followers
-  Following
+    <div class="user__bio">
+      <p></p>
+    </div>
 
+    <div class="user__activities">
+      <div class="user__repos">
+        <p class="activities__name">Repos</p>
+        <p class="activities__amount amount"></p>
+      </div>
+      <div class="user__followers">
+        <p class="activities__name">Followers</p>
+        <p class="activities__amount amount"></p>
+      </div>
+      <div class="user__following">
+        <p class="activities__name">Following</p>
+        <p class="activities__amount amount"></p>
+      </div>
+    </div>
+
+    <div class="user__links">
+      <div class="user__location">
+        <img src="/assets/icon-location.svg" alt="icon-location" class="link__thumb">
+        <p class="link__desc"></p>
+      </div>
+      <div class="user__twitter">
+        <img src="/assets/icon-twitter.svg" alt="icon-twitter" class="link__thumb">
+        <p class="link__desc"></p>
+      </div>
+      <div class="user__website">
+        <img src="/assets/icon-website.svg" alt="icon-website" class="link__thumb">
+        <p class="link__desc"></p>
+      </div>
+      <div class="user__company">
+        <img src="/assets/icon-company.svg" alt="icon-company" class="link__thumb">
+        <p class="link__desc"></p>
+      </div>
+    </div>
+  </main>
+
+  <script src="./js/main.js"></script>
 </body>
 </html>

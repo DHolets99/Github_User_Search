@@ -228,9 +228,8 @@ body {
   width: 100%;
   padding: 16px 32px;
   margin-bottom: 37px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 .user-card .user__activities div p {
   margin-bottom: 1px;
@@ -277,5 +276,56 @@ body {
   }
   .user__desc .user__nick {
     margin-bottom: 4px;
+  }
+}
+@media screen and (max-width: 480px) {
+  body {
+    max-width: 100%;
+    margin: 31px 24px auto 24px;
+    font-size: 13px;
+    line-height: 25px;
+  }
+  .search-form {
+    margin-bottom: 16px;
+  }
+  .user-card {
+    padding: 32px 24px 48px 24px;
+    grid-template-columns: 70px auto;
+    column-gap: 19px;
+  }
+  .user-card .user-card__icon {
+    max-width: 70px;
+    max-height: 70px;
+  }
+  .user-card .user__desc .user__name {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .user-card .user__desc .user__nick {
+    font-size: 13px;
+    line-height: 19px;
+  }
+  .user-card .user__desc .user__join {
+    font-size: 13px;
+    line-height: 19px;
+  }
+  .user-card .user__bio {
+    margin-bottom: 23px;
+  }
+  .user-card .user__activities {
+    padding: 19px 15px;
+    margin-bottom: 24px;
+  }
+  .user-card .user__activities div {
+    text-align: center;
+  }
+  .user-card .user__activities div p {
+    text-align: center !important;
+    font-size: 11px;
+    line-height: 16px;
+  }
+  .user-card .user__links {
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 17px;
   }
 }

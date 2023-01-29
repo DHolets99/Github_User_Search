@@ -30,12 +30,12 @@ function changeTheme() {
 }
 
 
+window.addEventListener('load', getUser('octocat'));
+
 btn.addEventListener('click', () => {
     let nick = input.value;
     getUser(nick);
 });
-
-
 
 async function getUser(nick) {
     let response = await fetch(`https://api.github.com/users/${nick}`);

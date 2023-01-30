@@ -197,7 +197,7 @@ body {
             letter-spacing: 0px;
             text-align: left;
             background-color: inherit;
-            color: #222731;
+            color: var(--var-fontColor);
             caret-color: var(--var-blue);
         }
 
@@ -208,6 +208,16 @@ body {
         .search-form__input::placeholder {
             color: var(--var-fontColor);
             background-color: inherit;
+        }
+
+        .search-form__error {
+            display: none;
+            width: 50%;
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 22px;
+            color: #F74646;
+            margin-left: auto;
         }
 
         .search-form__button {
@@ -226,6 +236,12 @@ body {
             line-height: 24px;
             letter-spacing: 0px;
             text-align: left;
+
+            transition: all 0.2s;
+        }
+
+        .search-form__button:hover {
+            background: #60ABFF;
         }
     }
 }
@@ -373,6 +389,15 @@ body {
 
     .search-form {
         margin-bottom: 16px;
+        position: relative;
+
+        .search-form__error {
+            font-size: 13px;
+            line-height: 19px;
+            position: absolute;
+            left: 82px;
+            bottom: 0px;
+        }
     }
 
     .user-card {

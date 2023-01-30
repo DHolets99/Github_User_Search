@@ -4,6 +4,7 @@ const darkTheme = document.querySelector('.toggle_dark');
 const root = document.querySelector('html');
 const input = document.querySelector('#form');
 const btn = document.querySelector('.search-form__button');
+const error = document.querySelector('.search-form__error');
 const userAvatar = document.querySelector('.user-card__icon > img')
 const userName = document.querySelector('.user__name');
 const userNick = document.querySelector('.user__nick');
@@ -37,15 +38,26 @@ btn.addEventListener('click', () => {
     getUser(nick);
 });
 
+input.addEventListener('input', checkError);
+
+function checkError() {
+    if (error.style.display = "block") {
+        error.style.display = "none"
+    } else {
+        error.style.display = "block";
+    }
+}
+
 async function getUser(nick) {
     let response = await fetch(`https://api.github.com/users/${nick}`);
 
     if (response.ok) {
         let json = await response.json();
+        checkError();
         saveUser(json);
-      } else {
-        alert("Ошибка HTTP: " + response.status);
-      }
+    } else {
+        error.style.display = "block";
+    }
 }
 
 function saveUser(json) {

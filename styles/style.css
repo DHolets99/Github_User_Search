@@ -21,6 +21,12 @@ input:-webkit-autofill:active {
   justify-content: space-between;
   align-items: center;
 }
+:root .toggle:hover svg path {
+  fill: #222731;
+}
+:root .toggle:hover p {
+  color: #222731;
+}
 :root .toggle_light {
   display: none;
 }
@@ -36,6 +42,12 @@ input:-webkit-autofill:active {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+[dark] .toggle:hover svg path {
+  fill: #90A4D4;
+}
+[dark] .toggle:hover p {
+  color: #90A4D4;
 }
 [dark] .toggle_dark {
   display: none;
@@ -54,6 +66,12 @@ input:-webkit-autofill:active {
     justify-content: space-between;
     align-items: center;
   }
+  :root .toggle:hover svg path {
+    fill: #90A4D4;
+  }
+  :root .toggle:hover p {
+    color: #90A4D4;
+  }
   :root .toggle_dark {
     display: none;
   }
@@ -68,6 +86,12 @@ input:-webkit-autofill:active {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  [light] .toggle:hover svg path {
+    fill: #222731;
+  }
+  [light] .toggle:hover p {
+    color: #222731;
   }
   [light] .toggle_light {
     display: none;
@@ -99,6 +123,7 @@ body {
   cursor: pointer;
 }
 .header .toggle__desc {
+  font-weight: 700;
   text-transform: uppercase;
   margin-right: 16px;
 }

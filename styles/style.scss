@@ -75,6 +75,15 @@ input:-webkit-autofill:active  {
         @include flex_row;
     }
 
+    .toggle:hover {
+        svg path {
+        fill: #222731;
+        }
+        p {
+            color: #222731;
+        }
+    }
+
     .toggle_light {
         display: none;
     }
@@ -90,6 +99,15 @@ input:-webkit-autofill:active  {
 
     .toggle_light {
         @include flex_row;
+    }
+
+    .toggle:hover {
+        svg path {
+        fill: #90A4D4;
+        }
+        p {
+            color: #90A4D4;
+        }
     }
 
     .toggle_dark {
@@ -109,6 +127,15 @@ input:-webkit-autofill:active  {
         @include flex_row;
     }
 
+    .toggle:hover {
+        svg path {
+        fill: #90A4D4;
+        }
+        p {
+            color: #90A4D4;
+        }
+    }
+
     .toggle_dark {
         display: none;
     }
@@ -123,6 +150,15 @@ input:-webkit-autofill:active  {
 
     .toggle_dark {
         @include flex_row;
+    }
+
+    .toggle:hover {
+        svg path {
+        fill: #222731;
+        }
+        p {
+            color: #222731;
+        }
     }
 
     .toggle_light {
@@ -156,6 +192,7 @@ body {
     }
 
     .toggle__desc {
+        font-weight: 700;
         text-transform: uppercase;
         margin-right: 16px;
     }
@@ -335,10 +372,15 @@ body {
         row-gap: 20px;
         column-gap: 60px;
 
-        div {
+        a {
             @include flex_row;
             gap: 16px;
             justify-content: flex-start;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 22px;
+            color: #4B6A9B;
             cursor: pointer;
 
             img {
@@ -346,8 +388,17 @@ body {
             }
         }
 
-        div:hover {
+        a:hover {
             text-decoration: underline;
+        }
+
+        .not_available {
+            opacity: 0.5;
+            cursor: default;
+        }
+
+        .not_available:hover {
+            text-decoration: none;
         }
     }
 }

@@ -130,10 +130,11 @@ function getInfo(info) {
 }
 
 function changeLinkStatus(links) {
-    console.log(links);
     for (link of links) {
         if (link.innerHTML == 'Not Available') {
             link.parentElement.classList.add("not_available");
+        } else if (link.parentElement.classList.contains("not_available")) {
+            link.parentElement.classList.remove("not_available");
         };
     }
 }

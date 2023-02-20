@@ -293,19 +293,31 @@ body {
   row-gap: 20px;
   column-gap: 60px;
 }
-.user-card .user__links div {
+.user-card .user__links a {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
   justify-content: flex-start;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+  color: #4B6A9B;
   cursor: pointer;
 }
-.user-card .user__links div img {
+.user-card .user__links a img {
   width: 20px;
 }
-.user-card .user__links div:hover {
+.user-card .user__links a:hover {
   text-decoration: underline;
+}
+.user-card .user__links .not_available {
+  opacity: 0.5;
+  cursor: default;
+}
+.user-card .user__links .not_available:hover {
+  text-decoration: none;
 }
 
 @media screen and (max-width: 820px) {

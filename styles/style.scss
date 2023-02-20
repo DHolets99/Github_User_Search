@@ -372,10 +372,15 @@ body {
         row-gap: 20px;
         column-gap: 60px;
 
-        div {
+        a {
             @include flex_row;
             gap: 16px;
             justify-content: flex-start;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 22px;
+            color: #4B6A9B;
             cursor: pointer;
 
             img {
@@ -383,8 +388,17 @@ body {
             }
         }
 
-        div:hover {
+        a:hover {
             text-decoration: underline;
+        }
+
+        .not_available {
+            opacity: 0.5;
+            cursor: default;
+        }
+
+        .not_available:hover {
+            text-decoration: none;
         }
     }
 }

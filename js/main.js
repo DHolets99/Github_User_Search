@@ -18,14 +18,26 @@ const userTwitter = document.querySelector('.user__twitter > .link__desc');
 const userWebsite = document.querySelector('.user__website > .link__desc');
 const userCompany = document.querySelector('.user__company > .link__desc');
 
+let links = [userLocation, userTwitter, userWebsite, userCompany];
+
 toggle.addEventListener('click', changeTheme);
 
 function changeTheme() {
-    if (document.body.hasAttribute('light')) {
+    if ((!document.body.hasAttribute('light')) && (!document.body.hasAttribute('dark'))) {
+        if (window.matchMedia('(prefers-color-scheme: light)').media == '(prefers-color-scheme: light)') {
+            console.log(window.matchMedia.media);
+            document.body.setAttribute('dark','');
+        } else {
+            document.body.setAttribute('light','');
+        }
+    } else if (document.body.hasAttribute('light')) {
         document.body.removeAttribute('light');
         document.body.setAttribute('dark', '');
-    } else {
+    } else if (document.body.hasAttribute('dark')) {
         document.body.removeAttribute('dark');
+        document.body.setAttribute('light', '');
+    } else {
+        console.log('good');
         document.body.setAttribute('light', '');
     }
 }
@@ -98,6 +110,8 @@ function useUserInformation(user) {
     userTwitter.innerHTML = getInfo(user.twitter);
     userWebsite.innerHTML = getInfo(user.blog);
     userCompany.innerHTML = getInfo(user.company);
+
+    changeLinkStatus(links);
 }
 
 function getDate(string) {
@@ -112,5 +126,14 @@ function getInfo(info) {
         return 'Not Available'
     } else {
         return info;
+    }
+}
+
+function changeLinkStatus(links) {
+    console.log(links);
+    for (link of links) {
+        if (link.innerHTML == 'Not Available') {
+            link.parentElement.classList.add("not_available");
+        };
     }
 }

@@ -25,8 +25,8 @@ toggle.addEventListener('click', changeTheme);
 
 function changeTheme() {
     if ((!document.body.hasAttribute('light')) && (!document.body.hasAttribute('dark'))) {
-        if (window.matchMedia('(prefers-color-scheme: light)').media == '(prefers-color-scheme: light)') {
-            console.log(window.matchMedia.media);
+        
+        if (window.matchMedia('(prefers-color-scheme: light)').matches == true) {
             document.body.setAttribute('dark','');
         } else {
             document.body.setAttribute('light','');

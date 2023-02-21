@@ -18,14 +18,15 @@ const userTwitter = document.querySelector('.user__twitter > .link__desc');
 const userWebsite = document.querySelector('.user__website > .link__desc');
 const userCompany = document.querySelector('.user__company > .link__desc');
 
+let nick = 'octocat';
 let links = [userLocation, userTwitter, userWebsite, userCompany];
 
 toggle.addEventListener('click', changeTheme);
 
 function changeTheme() {
     if ((!document.body.hasAttribute('light')) && (!document.body.hasAttribute('dark'))) {
-        if (window.matchMedia('(prefers-color-scheme: light)').media == '(prefers-color-scheme: light)') {
-            console.log(window.matchMedia.media);
+        
+        if (window.matchMedia('(prefers-color-scheme: light)').matches == true) {
             document.body.setAttribute('dark','');
         } else {
             document.body.setAttribute('light','');
@@ -42,8 +43,7 @@ function changeTheme() {
     }
 }
 
-
-window.addEventListener('load', getUser('octocat'));
+window.addEventListener('load', getUser(nick));
 
 btn.addEventListener('click', () => {
     let nick = input.value;
@@ -54,7 +54,7 @@ input.addEventListener('input', checkError);
 
 function checkError() {
     if (error.style.display = "block") {
-        error.style.display = "none"
+        error.style.display = "none";
     } else {
         error.style.display = "block";
     }
@@ -67,6 +67,7 @@ async function getUser(nick) {
         let json = await response.json();
         checkError();
         saveUser(json);
+        input.value = '';
     } else {
         error.style.display = "block";
     }
